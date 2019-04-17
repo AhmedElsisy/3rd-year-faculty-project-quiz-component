@@ -1,9 +1,8 @@
-package Entities;
+package com.quizz.quiz.demo.Entities;
 
-import java.util.UUID;
 
 public class Questions {
-    public UUID ID;
+    public String QuizID;
     public String question;
     public String choice1;
     public String choice2;
