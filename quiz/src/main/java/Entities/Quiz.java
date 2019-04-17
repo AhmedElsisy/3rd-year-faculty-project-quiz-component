@@ -1,6 +1,8 @@
 package Entities;
 
+import java.util.UUID;
+
 public class Quiz {
-    int ID;
-    String type;
+    public UUID ID;
+    public String type;
 }
