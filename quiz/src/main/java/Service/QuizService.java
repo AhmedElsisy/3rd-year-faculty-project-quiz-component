@@ -7,14 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.UUID;
 
-
-
-public class AddQuiz {
-
-    Quiz q;
-    Questions questions;
+public class QuizService {
     DAOO dAo;
-    AddQuiz(String t,String quest,String choice1,String choice2,String choice3,String choice4,String rightanswer){
+    public Quiz q ;
+    public Questions questions;
+    @Autowired
+    QuizService(DAOO dAo){
+        this.dAo = dAo;
+    }
+
+    public void AddQuiz(String t,String quest,String choice1,String choice2,String choice3,String choice4,String rightanswer){
         q = new Quiz();
         q.type = t;
         UUID temp = UUID.randomUUID();
@@ -27,11 +29,10 @@ public class AddQuiz {
         questions.choice3 = choice3;
         questions.choice4 = choice4;
         questions.rightanswer = rightanswer;
-        this.dAo = dAo;
+        AddToDatabase();
     }
-
-    @Autowired
-    public void intializeDatabase(DAOO dAo){
-        this.dAo = dAo;
+    void AddToDatabase(){
+        dAo.addQuiz(q);
+        dAo.addQuestions(questions);
     }
 }
