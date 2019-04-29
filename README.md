@@ -41,3 +41,6 @@ Our 4 services are :
   - **GET** : ​``` localhost:8080/quiz/evaluate ```
   - Request parameters :
     - values : ​string[]​ (ex. “/quiz/evaluate?values=choice1,choice2,etc”)
+
+
+### [Here](https://cloud.docker.com/u/ahmadshaaban/repository/docker/ahmadshaaban/quizcomponent) for the Docker image 
